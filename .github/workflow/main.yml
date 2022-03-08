@@ -1,6 +1,6 @@
-name: Laravel Github Actions
+name: CI-LARAVEL
 
-on:[push]
+on: push
   
 jobs:
   testing:
