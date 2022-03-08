@@ -1,10 +1,12 @@
 name: CI-LARAVEL
 
 on: 
-  branches:
-    - development
+  push:
+    branches:
+      - development
   pull_request:
-    - main
+    branches:
+      - main
   
 jobs:
   build:
