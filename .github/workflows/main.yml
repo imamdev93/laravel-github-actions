@@ -26,6 +26,8 @@ jobs:
         run: php artisan key:generate
       - name: Optimize
         run: php artisan optimize
+      - name: push
+        uses: actions-x/commit@v2
       
 
 
