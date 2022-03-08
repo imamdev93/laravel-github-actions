@@ -1,14 +1,12 @@
 name: CI-LARAVEL
 
-on: push
+on: 
+  branches:
+    - development
+  pull_request:
+    - main
   
 jobs:
-  testing:
-    name: Testing
-    runs-on: ubuntu-latest
-    steps:
-      - name: Menampilan Pesan
-        run: echo 'hello world'
   build:
     name: Build
     runs-on: ubuntu-latest
