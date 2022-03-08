@@ -1,0 +1,37 @@
+name: Laravel Github Actions
+
+on:
+  push:
+    branches:
+      - development
+  pull_request:
+    branches:
+      - main
+  
+jobs:
+  testing:
+    name: Testing
+    runs-on: ubuntu-latest
+    steps:
+      - name: Menampilan Pesan
+      run: echo 'hello world'
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install PHP versions
+      - uses: shivammathur/setup-php@v2
+      with:
+        php-version: 8.0.3
+      - name: Composer Install
+      run: composer install
+      - name: Copy Environment
+      run: php -r "file_exists('.env') || copy('.env.example', '.env');"
+      - name: Generate Key
+      run: php artisan key:generate
+      - name: Optimize
+      run: php artisan optimize
+      
+
+
